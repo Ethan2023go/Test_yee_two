@@ -38,7 +38,15 @@
         }
         if (user.acc != '' && user.pw != '' && user.pw != '' && user.email != '') {
             if (user.pw == user.pw2) {
+               $.post("./api/chk_acc.php",{acc:user.acc},(res)=>{
+                console.log(res)
+                if(parseInt(res)==1){
+                        // parseInt為js 轉換成number類型的指令
+                       alert("帳號重複")
+                    }else{
 
+                    }
+               })
             } else {
                 alert("密碼錯誤")
             }

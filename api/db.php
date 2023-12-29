@@ -143,6 +143,8 @@ function to($url){
 }
 
 $Total=new DB('total');
+$Users=new DB('users');
+
 
 
 
