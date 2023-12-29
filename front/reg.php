@@ -41,7 +41,7 @@
                $.post("./api/chk_acc.php",{acc:user.acc},(res)=>{
                 console.log(res)
                 if(parseInt(res)==1){
-                        // parseInt為js 轉換成number類型的指令
+                        // parseInt為 Js轉換成number類型的指令
                        alert("帳號重複")
                     }else{
                        $.post('./api/reg.php',user,(res)=>{
