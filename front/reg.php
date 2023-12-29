@@ -1,7 +1,7 @@
 <fieldset>
     <legend>會員註冊</legend>
-     <span style="color: red;">*請設定您要註冊的帳號及密碼(最長12個字元)</span>
-     <table>
+    <span style="color: red;">*請設定您要註冊的帳號及密碼(最長12個字元)</span>
+    <table>
         <tr>
             <td class="clo">Step1:登入帳號</td>
             <td><input type="text" name="acc" id="acc"></td>
@@ -20,10 +20,30 @@
         </tr>
         <tr>
             <td>
-            <input type="submit" value="註冊">
-            <input type="reset" value="清除">
+                <input type="button" value="註冊" onclick="reg()">
+                <input type="reset" value="清除">
             </td>
             <td></td>
         </tr>
-     </table>
+    </table>
 </fieldset>
+
+<script>
+    function reg() {
+        let user = {
+            acc: $("#acc").val(),
+            pw: $("#pw").val(),
+            pw2: $("#pw2").val(),
+            email: $("#email").val()
+        }
+        if (user.acc != '' && user.pw != '' && user.pw != '' && user.email != '') {
+            if (user.pw == user.pw2) {
+
+            } else {
+                alert("密碼錯誤")
+            }
+        } else {
+            alert("不可空白")
+        }
+    }
+</script>
