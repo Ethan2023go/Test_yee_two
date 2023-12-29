@@ -37,10 +37,10 @@
             	<div>
             		<marquee style="width:78%;">請民眾踴躍投稿電子報，讓電子報成為大家互相交流、分享的園地!詳見最新文章</marquee>
                 	<span style="width:20%; display:inline-block;">
-                    	<a href="?do=login">會員登入</a>
-						   
+                    	<a href="?do=login">會員登入</a>  
                     </span>
                     	<div class="">
+							<!-- 各前端版面浮現 -->
                 		 <?php
                            $do=$_GET['do']??'main';
 						   $file="./front/{$do}.php";
