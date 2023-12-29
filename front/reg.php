@@ -44,7 +44,9 @@
                         // parseInt為js 轉換成number類型的指令
                        alert("帳號重複")
                     }else{
-
+                       $.post('./api/reg.php',user,(res)=>{
+                        alert('註冊完成，歡迎加入')
+                       })
                     }
                })
             } else {
