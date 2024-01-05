@@ -35,8 +35,8 @@
             </div>
             <div class="hal" id="main">
             	<div>
-            		<marquee style="width:78%;display:inline-block;">請民眾踴躍投稿電子報，讓電子報成為大家互相交流、分享的園地!詳見最新文章</marquee>
-                	<span style="width:20%; display:inline-block;">
+            		<marquee style="width:80%;display:inline-block;">請民眾踴躍投稿電子報，讓電子報成為大家互相交流、分享的園地!詳見最新文章</marquee>
+                	<span style="width:16%; display:inline-block;">
 					<?php 
 					if(!isset($_SESSION['user'])){
 					?>
@@ -45,8 +45,13 @@
 					}else{
 					?>		
 						歡迎,<?=$_SESSION['user'];?> 
-						<button>登出</button>
+						<button onclick="loaction.href='/api/logout.php'">登出</button>
 					<?php 
+						if($_SESSION['user']=='admin'){
+							?>
+							<button onclick="location.href='back.php'">管理</button>
+							<?php	
+							}
 					}
 					?>	
                     </span>
