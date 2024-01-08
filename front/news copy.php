@@ -18,11 +18,17 @@
         ?>
         <tr>
             <td>
-                <div class='title' data-id="<?=$row['id'];?>" style='cursor:pointer'>><?=$row['title'];?></div>
+                <div class='title' data-id="<?=$row['id'];?>" style='cursor: pointer'>
+                    <?=$row['title'];?>
+                </div>
             </td>
             <td>
-                <div id="s<?=$row['id'];?>"><?=mb_substr($row['news'],0,25);?>...</div>
-                <div id="a<?=$row['id'];?>" style='display:none'><?=$row['news'];?></div>
+                <div id="s<?=$row['id'];?>">
+                    <?=mb_substr($row['news'],0,25);?>...
+                </div>
+                <div id="a<?=$row['id'];?>" style='display:none'>
+                    <?=$row['news'];?>
+                </div>
             </td>
             <td>
             <?php
@@ -33,7 +39,6 @@
                     echo "<a href='Javascript:good({$row['id']})'>讚</a>";
                 }
             }
-            
             ?>
             </td>
         </tr>
@@ -58,14 +63,13 @@
     ?>
     </div>
 </fieldset>
-
 <script>
-    $(".title").on('click',(e)=>{
-        let id =$(e.target).data('id');
-        // console.log(id);
-        $(`#s${id},#a${id}`).toggle();
-        //$("#s"+id+",#a"+id).toggle(); 土炮寫法
-    })
+$(".title").on('click',(e)=>{
+    let id=$(e.target).data('id');
+    $(`#s${id},#a${id}`).toggle();
+    //$("#s"+id+",#a"+id).toggle();
 
+})
 
 </script>
+
