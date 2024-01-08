@@ -17,24 +17,14 @@
         foreach($rows as $row){
         ?>
         <tr>
-            <td><div class="title" data-id="<?=$row['id'];?>"><?=$row['title'];?></div></td>
-            <td style="position:relative;">
-            <div><?=mb_substr($row['news'],0,25);?>...</td></div>
-            <div id="p<?=$row['id'];?>" class="pop">
-            <pre><?=$row['news'];?></pre>
-            </div>
-            <td>
-                <span id="g<?=$row['id'];?>"><?=$row['good'];?></span>個人說<img src="./icon/02B03.jpg" style="width:25px">
-                <?php
-                if(isset($_SESSION['user'])){
-                    if($Log->count(['news'=>$row['id'],'acc'=>$_SESSION['user']])>0){
-                        echo"<a href=''>收回讚</a>";
-                    }else{
-                        echo "<a href=''>讚</a>";
-                    }
-                }
-                ?>
+            <td><div class='title' data-id="<?=$row['id'];?>"><?=$row['title'];?></div></td>
+            <td style="position: relative;">
+                <div><?=mb_substr($row['news'],0,25);?>...</div>
+                <div id="p<?=$row['id'];?>" class="pop">
+		            <pre><?=$row['news'];?></pre>
+	            </div>
             </td>
+            <td></td>
         </tr>
         <?php
         }
@@ -58,11 +48,12 @@
     </div>    
 </fieldset>
 <script>
-    $(".title").hover(
-        function(){
-            $(".pop").hide()
-            let id =$(this).data("id")
-            $("#p"+id).show();
-        }
-    )
+$(".title").hover(
+    function(){
+        $(".pop").hide()
+        let id=$(this).data("id")
+        $("#p"+id).show();
+    }
+)
+
 </script>
