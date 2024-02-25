@@ -51,9 +51,9 @@
 
 					<?php 
 						if($_SESSION['user']=='admin'){
-						?>
+					?>
 						<button onclick="location.href='back.php'">管理</button>
-						<?php	
+					<?php	
 						}
 					}
 					?>						
